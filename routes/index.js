@@ -245,6 +245,13 @@ const users = [
 let messages = [];
 let lastId = 1;
 
+const users2 = [
+  // You know password for the user.
+  { name: 'user', password: 'pwd' },
+  // You don't know password for the admin.
+  { name: 'admin', password: Math.random().toString(32), canDelete: true },
+];
+
 function findUser(auth) {
   return users.find((u) =>
     u.name === auth.name &&
