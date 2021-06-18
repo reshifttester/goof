@@ -10,6 +10,8 @@ router.get('/', async (req, res, next) => {
   const mongoConnection = typeorm.getConnection('mysql')
   const repo = mongoConnection.getRepository("Users")
   const password = Math.random().toString(32)
+  // TODO: this is redundant, will remove later
+  const password2 = Math.random().toString(32)
 
   // hard-coded getting account id of 1
   // as a rpelacement to getting this from the session and such
